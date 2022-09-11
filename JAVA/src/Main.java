@@ -16,7 +16,7 @@ public class Main {
             if (a == -1 && b == -1 && c == -1) {
                 break;
             }
-            sb.append("w(" + a + ", " + b + ", " + c + ") = " + W(a, b, c) + "\n");
+            sb.append("w(" + a + ", " + b + ", " + c + ") = " + WW(a, b, c) + "\n");
         }
         System.out.println(sb);
     }
@@ -25,7 +25,7 @@ public class Main {
         return 0 <= a && a <= 20 && 0 <= b && b <= 20 && 0 <= c && c <= 20;
     }
 
-    public static int W(int a, int b, int c) {
+    public static int WW(int a, int b, int c) {
         if (check(a, b, c) && dp[a][b][c] != 0) {
             return dp[a][b][c];
         }
@@ -33,12 +33,12 @@ public class Main {
             return 1;
         }
         if (a > 20 || b > 20 || c > 20) {
-            return dp[20][20][20] = W(20, 20, 20);
+            return dp[20][20][20] = WW(20, 20, 20);
         }
         if (a < b && b < c) {
-            return dp[a][b][c] = W(a, b, c - 1) + W(a, b - 1, c - 1) - W(a, b - 1, c);
+            return dp[a][b][c] = WW(a, b, c - 1) + WW(a, b - 1, c - 1) - WW(a, b - 1, c);
         } else {
-            return dp[a][b][c] = W(a - 1, b, c) + W(a - 1, b - 1, c) + W(a - 1, b, c - 1) - W(a - 1, b - 1, c - 1);
+            return dp[a][b][c] = WW(a - 1, b, c) + WW(a - 1, b - 1, c) + WW(a - 1, b, c - 1) - WW(a - 1, b - 1, c - 1);
         }
     }
 }
