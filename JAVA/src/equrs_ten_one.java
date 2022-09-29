@@ -1,15 +1,15 @@
 import java.util.Scanner;
 
 /**
- * ½Ç½À¹®Á¦ 2¹ø
+ * ì‹¤ìŠµë¬¸ì œ 2ë²ˆ
  */
 public class equrs_ten_one {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("2ÀÚ¸®¼ö Á¤¼ö ÀÔ·Â(10~99)>>");
+        System.out.println("2ìë¦¬ìˆ˜ ì •ìˆ˜ ì…ë ¥(10~99)>>");
         int Integer = sc.nextInt();
         if (Integer / 10 == Integer % 10) {
-            System.out.println("Yes! 10ÀÇ ÀÚ¸®¿Í 1ÀÇ ÀÚ¸®°¡ °°½À´Ï´Ù.");
+            System.out.println("Yes! 10ì˜ ìë¦¬ì™€ 1ì˜ ìë¦¬ê°€ ê°™ìŠµë‹ˆë‹¤.");
         }
         sc.close();
     }
